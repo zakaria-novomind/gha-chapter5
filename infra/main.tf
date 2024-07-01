@@ -66,7 +66,7 @@ resource "aws_instance" "apache2_server" {
   vpc_security_group_ids = [module.http_sg_ingress.sg_id,
     module.generic_sg_egress.sg_id,
   module.ssh_sg_ingress.sg_id]
-  key_name  = var.ssh_key_name
+  #key_name  = var.ssh_key_name
   user_data = file("./scripts/user_data.sh")
   tags = {
     env  = var.environment
